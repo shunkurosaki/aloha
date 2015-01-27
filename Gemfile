@@ -48,3 +48,4 @@ end
 gem 'grape'
 gem 'grape-rabl'
 gem 'grape-jbuilder'
+
