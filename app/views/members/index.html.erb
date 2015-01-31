@@ -1,0 +1,7 @@
+<% provide(:title, @member.name) %>
+<h1>
+  <%#= gravatar_for @member %>
+  <% @member.each do |member| %>
+    <%= p member.name %><br>
+  <% end %>
+</h1>
