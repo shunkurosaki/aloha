@@ -11,7 +11,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     if @member.save
-      redirect_to 'members'
+      render 'index'
     else
       render 'new'
     end
