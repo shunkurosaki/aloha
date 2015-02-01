@@ -20,11 +20,15 @@ class Members_API < Grape::API
     params do
       requires :name, type: String
       requires :password, type: String
+      requires :latitude, type: Float
+      requires :longitude, type: Float
     end
     post '/' do
       Member.create!({
         name: params[:name],
-        password: params[:password]
+        password: params[:password],
+        latitude: params[:latitude],
+        longitude: params[:longitude]
       })
     end
   end

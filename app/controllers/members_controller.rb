@@ -11,6 +11,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     if @member.save
+      sign_in @user
       redirect_to '/members'
     else
       render 'new'
