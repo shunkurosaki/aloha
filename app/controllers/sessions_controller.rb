@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     member = Member.find_by(name: params[:session][:name].downcase)
     if member && member.authenticate(params[:session][:password])
       sign_in member
-      redirect_to member
+      redirect_to '/member'
     else
       render 'new'
     end
