@@ -1,4 +1,7 @@
 class Member < ActiveRecord::Base
+  has_many :friendships, :dependent => :destroy
+  has_many :friends, :through => :friendships
+
   before_save { self.name = name.downcase }
   validates :name, presence: true, length: { maximum: 12 }
   validates :password, length: { minimum: 4 }

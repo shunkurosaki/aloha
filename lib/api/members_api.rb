@@ -33,5 +33,3 @@ class Members_API < Grape::API
     end
   end
 end
-
-
