@@ -2,6 +2,6 @@
 <h1>
   <%#= gravatar_for @member %>
   <% @member.each do |member| %>
-    <%= p member.name %><br>
+    <%= p member.name, member.remember_token %><br>
   <% end %>
 </h1>
