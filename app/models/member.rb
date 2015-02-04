@@ -3,6 +3,7 @@ class Member < ActiveRecord::Base
   has_many :friends, :through => :friendships
 
   before_save { self.name = name.downcase }
+  before_create :create_remember_token
   validates :name, presence: true, length: { maximum: 12 }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 4 }
   has_secure_password

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   match '/signup',  to: 'members#new',       via: 'get'
   match '/signin',  to: 'sessions#new',      via: 'get'
   match '/signout', to: 'sessions#destroy',  via: 'delete'
-
+  mount API => "/"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -61,6 +61,5 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
-  #   end
-  mount API => "/"
+  #   end  
 end
